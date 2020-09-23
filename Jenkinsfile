@@ -27,7 +27,7 @@ pipeline {
         stage('Scan Image') {
             steps {
                 sh 'echo "${SCAN_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}.${BUILD_NUMBER} Dockerfile" > anchore_images'
-                anchore 'anchore_images'
+                anchore engineRetries: '900', name: 'anchore_images'
             }
         }
 
