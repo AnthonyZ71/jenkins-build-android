@@ -1,4 +1,4 @@
-FROM base-dev:latest
+FROM sentinel:5000/jenkins-build-base:latest
 
 ## Configuration for Android development
 
