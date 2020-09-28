@@ -1,6 +1,9 @@
 FROM sentinel:5000/jenkins-build-base:latest
 
 ## Configuration for Android development
+## Check for latest version way down in the "Command line tools only" section:
+## https://developer.android.com/studio
+## have to run android studio -> tools -> sdkmanager -> android sdk -> sdk tools -> build-tools -> show package details to find latest build-tool verions
 
 ARG android_sdk_ver=6609375_latest
 
