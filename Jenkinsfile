@@ -16,7 +16,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    def customImage = docker.build("${IMAGE_NAME}:${IMAGE_VERSION}.${BUILD_NUMBER}", "--network host --no-cache .")
+                    def customImage = docker.build("${IMAGE_NAME}:${IMAGE_VERSION}.${BUILD_NUMBER}", "--no-cache .")
                     docker.withRegistry('https://${SCAN_REGISTRY}') {
                         customImage.push()
                     }
